@@ -25,18 +25,18 @@ public abstract class AbstractCheckHandler {
 
 
     /**
-     * 处理器配置
-     */
-    @Setter
-    @Getter
-    protected ProductCheckHandlerConfig config;
-
-    /**
      * 处理器执行方法
      * @param param
      * @return
      */
     public abstract Result handle(ProductVO param);
+
+    /**
+     * 处理器配置
+     */
+    @Setter
+    @Getter
+    protected ProductCheckHandlerConfig config;
 
     /**
      * 链路传递
