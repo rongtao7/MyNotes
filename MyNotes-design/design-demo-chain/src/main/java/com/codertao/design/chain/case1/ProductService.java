@@ -25,7 +25,7 @@ public class ProductService {
     public Result createProduct(ProductVO param) {
 
         //参数校验，使用责任链模式
-        Result paramCheckResult = this.paramCheck(param);
+        Result paramCheckResult = this.paramCheckChain(param);
         if (!paramCheckResult.isSuccess()) {
             return paramCheckResult;
         }
@@ -39,7 +39,7 @@ public class ProductService {
      * @param param
      * @return
      */
-    private Result paramCheck(ProductVO param) {
+    private Result paramCheckChain(ProductVO param) {
 
         //获取处理器配置：通常配置使用统一配置中心存储，支持动态变更
         ProductCheckHandlerConfig handlerConfig = this.getHandlerConfigFile();
